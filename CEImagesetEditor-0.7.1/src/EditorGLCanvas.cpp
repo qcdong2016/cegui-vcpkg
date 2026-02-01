@@ -83,10 +83,21 @@ EditorGLCanvas::EditorGLCanvas( EditorView* v, wxWindow* parent, const wxPoint& 
     m_scrollPageX( 0 ),
     m_scrollPosY( 0 ),
     m_scrollDocY( 0 ),
-    m_scrollPageY( 0 )
+    m_scrollPageY( 0 ),
+    m_context(NULL)
 {
+    wxGLContextAttrs ctxAttrs;
+    ctxAttrs.CoreProfile()               
+            .OGLVersion(1, 3)            
+            .EndList();                  
+
+    m_context = new wxGLContext(this, nullptr, &ctxAttrs);
+    if (!m_context->IsOK())
+    {
+        wxLogMessage("Trying to set OpenGL 99.2 failed, as expected.");
+    }
     // Init one-time-only stuff
-    SetCurrent(this);
+    m_context->SetCurrent(*this);
 
     // we will use a cross-hair cursor
     SetCursor( wxCURSOR_CROSS );
@@ -246,9 +257,13 @@ void EditorGLCanvas::initialiseCEGUI()
 
     // build string where our required files can be found.
     String dataDir(CEGUIHelper::ToCEGUIString(wxStandardPaths::Get().GetResourcesDir()));
+    #ifdef EDITOR_DATA_DIR
+    dataDir = EDITOR_DATA_DIR;
+    #endif
+
     if ( !dataDir.empty() && ( dataDir[dataDir.length() - 1] != '/' ) )
             dataDir += '/';
-
+    
     // on Windows, the datafiles here will be in a 'data' subdir
     #if defined(__WIN32__) || defined (_WIN32)
         dataDir += "data/";
@@ -673,7 +688,7 @@ bool EditorGLCanvas::Reset()
 //-----------------------------------------------------------------------
 void EditorGLCanvas::Render()
 {
-    SetCurrent(this);
+    m_context->SetCurrent(*this);
 
     // clear colour buffer
     glClear( GL_COLOR_BUFFER_BIT );

@@ -57,9 +57,19 @@ mCurrentWidth(-1),
 mCurrentHeight(-1),
 mLastMouseX(-1),
 mLastMouseY(-1),
-
+m_context(NULL),
 wxGLCanvas(frame, wxID_ANY, NULL, pos, size, wxNO_BORDER )
 {
+    wxGLContextAttrs ctxAttrs;
+        ctxAttrs.CoreProfile()               
+                .OGLVersion(1, 3)            
+                .EndList();                  
+
+    m_context = new wxGLContext(this, nullptr, &ctxAttrs);
+    if (!m_context->IsOK())
+    {
+        wxLogMessage("Trying to set OpenGL 99.2 failed, as expected.");
+    }
     // NOTE: Prefer constructor initialization lists (which are 
     // often more efficient) to assignment inside the 
     // constructor. Members in the initialization list should 
@@ -68,7 +78,7 @@ wxGLCanvas(frame, wxID_ANY, NULL, pos, size, wxNO_BORDER )
     // See item 4 in 'Effective C++ 3rd Edition' by Scott Meyers
 
     // Init one-time-only stuff
-    SetCurrent(this);
+    m_context->SetCurrent(*this);
 
     glShadeModel(GL_SMOOTH);
     glEnable(GL_DEPTH_TEST);
@@ -143,9 +153,9 @@ void EditorCanvas::OnLeftUp(wxMouseEvent& WXUNUSED(event))
 //------------------------------------------------------------------------
 void EditorCanvas::Render()
 {
-    if (m_view && m_view->GetDocument())
+    if (m_view && m_view->GetDocument() && m_context)
     {
-        SetCurrent(this);
+        m_context->SetCurrent(*this);
 
         // clear color and depth buffers
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -337,6 +347,7 @@ void EditorCanvas::OnPaint( wxPaintEvent& WXUNUSED(event) )
     // We need to do this to avoid a flood of paint events
     wxPaintDC paintDC(this);
 
+    m_context->SetCurrent(*this);
     Render();
 }
 

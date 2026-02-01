@@ -250,7 +250,7 @@ const DWORD ERROR_SEVERITY_MASK = ( ERROR_SEVERITY_ERROR | ERROR_SEVERITY_WARNIN
  * Recommended setting: 1 (setting to 0 will allow the user to interact with dangerous
  * parts of the application that might compromise the program state)
  */
-#define USE_MODAL_MESSAGE_BOXES 1
+#define USE_MODAL_MESSAGE_BOXES 0
 
 /************************************************************************
  * SPLASH SCREEN
@@ -264,7 +264,7 @@ const DWORD ERROR_SEVERITY_MASK = ( ERROR_SEVERITY_ERROR | ERROR_SEVERITY_WARNIN
  *
  * Recommended setting: 1 for releases (it is nicer); 0 for debug (it is quicker)
  */
-#define DISPLAY_SPLASH_SCREEN 1
+#define DISPLAY_SPLASH_SCREEN 0
 
 /** Time (in ms) that the splash screen will remain visible before loading the 
  * application.

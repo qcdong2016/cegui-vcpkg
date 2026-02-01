@@ -398,7 +398,7 @@ void ExceptionManager::RegisterExceptionHandler()
     // Register VEH exception handler that will be responsible for obtaining
     // the thrown exceptions (both CPP & win32 fatal ones) stack traces, codes and flags
     // NOTE: Only applicable on windows platforms
-    m_handler = ::AddVectoredExceptionHandler(0, &VectoredHandler);
+    //m_handler = ::AddVectoredExceptionHandler(0, &VectoredHandler);
 }
 
 //-----------------------------------------------------------------------

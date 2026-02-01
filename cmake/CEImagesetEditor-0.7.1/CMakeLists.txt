@@ -29,7 +29,7 @@ set(SOURCES
 
 add_definitions(
     -DPACKAGE_VERSION="0.7.1"
-    -DEDITOR_DATA_DIR="${CMAKE_INSTALL_PREFIX}/share/CEImagesetEditor")
+    -DEDITOR_DATA_DIR="${PROJ_DIR}")
 
 
 add_executable(CEImagesetEditor ${SOURCES})

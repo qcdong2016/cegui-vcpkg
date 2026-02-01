@@ -80,6 +80,8 @@ public:
 private:
     /** The view to which we are attached.*/
     EditorView* m_view;
+    /** OpenGL context.*/
+    wxGLContext* m_context;
 
     /** Pointer to cegui singleton.*/
     CEGUI::System* m_GUISystem;

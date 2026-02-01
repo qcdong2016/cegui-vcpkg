@@ -83,6 +83,9 @@ private:
 
     /** Last known mouseY position.*/
     long mLastMouseY;
+    
+    /** OpenGL context.*/
+    wxGLContext* m_context;
 
     /************************************************************************
      * PRIVATE FUNCTIONS
