@@ -1,0 +1,60 @@
+CEImagesetEdtitor
+An editing application for CrazyEddie's GUI System 'Imageset' files.
+
+Originally copyright �2006 Martin Fleurent.
+Currently copyright �2006 - 2008 CEImagesetEditor Team & Contributing Authors
+
+The following is a high-level view of changes made to the system between releases. For a 
+low-level view (SVN update reports) check releasenotes.txt.
+
+Release 0.6.2
+=============
+Modified: Switch ElasticBox to use absolute co-ords rather than relative to make things more reliable (no more odd size changes when moving a region).
+
+Bug Fix: Resolve issue which made drag-sizing flaky at higher zoom levels.
+Bug Fix: Resolve various stack overflow / recursive event issues.
+
+
+Release 0.6.1
+=============
+Added: Apple Mac support.
+Added: Distribute .xsd files in case users CEGUI is configured to use Xerces.
+
+
+Release 0.6.0
+=============
+Added: VS solutions, config changes --> see http://www.cegui.org.uk/phpBB2/viewtopic.php?t=2822
+
+Modified: Bump version in autotools build to be 0.6.0 (Switched release numbering to match that of core CEGUI lib.)
+
+Bug Fix: Update Makefile.am files so that addded MSVC++ projects are included with 'make dist'
+Bug Fix: Build system fixes for autotools / linux.
+
+
+Release 0.1.0 (no official release)
+===================================
+The following are basically changes made from Martin's original code
+(at least this is how I remember it!)
+
+Added: missing initialiser values in EditorGLCanvas constructor.
+Added: 'busy' state for some potentially long operations.
+Added: proper invoke method for resource groups dialog.
+Added: Initial code for wxPathCellEditor - a customised cell editor for wxGrid.
+Added: Initial code for CEGUI resource groups editor dialog module.
+Added: Scrollbar support to main editor view.
+Added: Support to scroll main view by holding middle mouse button and dragging.
+Added: support to load a new source image for an Imageset without affecting the size of already defined image regions.
+
+Removed: broken hack from resource groups dialog involving 'activated' events.
+
+Modified: Various cleanups, warning fixes, simplifications, etc...
+Modified: Tweaked code so that changing image file goes a bit quicker on Win32 (seemed ok on linux).
+Modified: Changed image scrolling implementation for EditorGLCanvas to ensure the same behaviour on all wxWidgets platforms.
+Modified: changed code so that paths are adjusted, and loaded correctly, according to the current default resource group target directory.
+
+Bug Fix: minor issue where changing the background colour only had effect when an imageset was defined and a source image loaded. Mantis #116.
+Bug Fix: issue where GLCanvas is not updated unless there is an Imageset open in the editor.  Mantis #115.
+Bug Fix: Resolved issue related to casting and multiple inheritance in wxPathCellEditor (switched base class order).
+Bug Fix: Changes so that document 'modified' state is handled correctly.
+Bug Fix: prevent unrequired event noise when zooming; fixes speed issues on large numbers of regions.
+Bug Fix: pkgdatadir compatability fix required on some systems.  (mantis #106)

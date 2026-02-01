@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D0C4E8D0486CD37000505A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0867D6AAFE840B52C02AAC07 /* InfoPlist.strings */; };
+		8D0C4E920486CD37000505A6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20286C33FDCF999611CA2CEA /* Carbon.framework */; };
+		DA57032E11217F26005B4B34 /* CEGUIBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA57032D11217F26005B4B34 /* CEGUIBase.framework */; };
+		DA57033011217F26005B4B34 /* CEGUIOpenGLRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA57032F11217F26005B4B34 /* CEGUIOpenGLRenderer.framework */; };
+		DAC4CAE50E13902B0089198D /* CEImagesetEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CACE0E13902B0089198D /* CEImagesetEditor.cpp */; };
+		DAC4CAE60E13902B0089198D /* DialogAbout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CACF0E13902B0089198D /* DialogAbout.cpp */; };
+		DAC4CAE70E13902B0089198D /* DialogResourceGroups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD00E13902B0089198D /* DialogResourceGroups.cpp */; };
+		DAC4CAE80E13902B0089198D /* EditorDocument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD10E13902B0089198D /* EditorDocument.cpp */; };
+		DAC4CAE90E13902B0089198D /* EditorFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD20E13902B0089198D /* EditorFrame.cpp */; };
+		DAC4CAEA0E13902B0089198D /* EditorGLCanvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD30E13902B0089198D /* EditorGLCanvas.cpp */; };
+		DAC4CAEB0E13902B0089198D /* EditorView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD40E13902B0089198D /* EditorView.cpp */; };
+		DAC4CAEC0E13902B0089198D /* ElasticBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD50E13902B0089198D /* ElasticBox.cpp */; };
+		DAC4CAED0E13902B0089198D /* ElasticBoxProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD60E13902B0089198D /* ElasticBoxProperties.cpp */; };
+		DAC4CAEE0E13902B0089198D /* ElasticBoxWindowRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD70E13902B0089198D /* ElasticBoxWindowRenderer.cpp */; };
+		DAC4CAEF0E13902B0089198D /* ImagesetHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CAD80E13902B0089198D /* ImagesetHandler.cpp */; };
+		DAC4CAF10E13902B0089198D /* PropertiesPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CADA0E13902B0089198D /* PropertiesPanel.cpp */; };
+		DAC4CAF20E13902B0089198D /* wxPathCellEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAC4CADB0E13902B0089198D /* wxPathCellEditor.cpp */; };
+		DAC4CB070E13908B0089198D /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CB020E13908B0089198D /* AUTHORS */; };
+		DAC4CB080E13908B0089198D /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CB030E13908B0089198D /* ChangeLog */; };
+		DAC4CB090E13908B0089198D /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CB040E13908B0089198D /* COPYING */; };
+		DAC4CB0A0E13908B0089198D /* README in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CB050E13908B0089198D /* README */; };
+		DAC4CB0B0E13908B0089198D /* releasenotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CB060E13908B0089198D /* releasenotes.txt */; };
+		DAC4CCB20E1395F20089198D /* libwx_base_carbonu-2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCAB0E1395F20089198D /* libwx_base_carbonu-2.8.a */; };
+		DAC4CCB30E1395F20089198D /* libwx_macu_core-2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCAC0E1395F20089198D /* libwx_macu_core-2.8.a */; };
+		DAC4CCB40E1395F20089198D /* libwx_macu_gl-2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCAD0E1395F20089198D /* libwx_macu_gl-2.8.a */; };
+		DAC4CCB50E1395F20089198D /* libwxjpeg-2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCAE0E1395F20089198D /* libwxjpeg-2.8.a */; };
+		DAC4CCB60E1395F20089198D /* libwxpng-2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCAF0E1395F20089198D /* libwxpng-2.8.a */; };
+		DAC4CCB70E1395F20089198D /* libwxregexu-2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCB00E1395F20089198D /* libwxregexu-2.8.a */; };
+		DAC4CCB80E1395F20089198D /* libwxtiff-2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCB10E1395F20089198D /* libwxtiff-2.8.a */; };
+		DAC4CCC10E1396F80089198D /* libwx_macu_adv-2.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCC00E1396F80089198D /* libwx_macu_adv-2.8.a */; };
+		DAC4CCC40E1397350089198D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4CCC30E1397350089198D /* OpenGL.framework */; };
+		DAC4CCF00E1398F10089198D /* CEImagesetEditor.imageset in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CCEC0E1398F10089198D /* CEImagesetEditor.imageset */; };
+		DAC4CCF10E1398F10089198D /* CEImagesetEditor.looknfeel in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CCED0E1398F10089198D /* CEImagesetEditor.looknfeel */; };
+		DAC4CCF20E1398F10089198D /* CEImagesetEditor.scheme in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CCEE0E1398F10089198D /* CEImagesetEditor.scheme */; };
+		DAC4CCF30E1398F10089198D /* CEImagesetEditor.tga in Resources */ = {isa = PBXBuildFile; fileRef = DAC4CCEF0E1398F10089198D /* CEImagesetEditor.tga */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0867D6ABFE840B52C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		20286C33FDCF999611CA2CEA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		32DBCF6D0370B57F00C91783 /* CEImagesetEditor_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEImagesetEditor_Prefix.pch; sourceTree = "<group>"; };
+		8D0C4E960486CD37000505A6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D0C4E970486CD37000505A6 /* CEImagesetEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CEImagesetEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA57032D11217F26005B4B34 /* CEGUIBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CEGUIBase.framework; path = "dependencies/CEGUI-SDK-0.7.1-mac/Frameworks/Release/CEGUIBase.framework"; sourceTree = "<group>"; };
+		DA57032F11217F26005B4B34 /* CEGUIOpenGLRenderer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CEGUIOpenGLRenderer.framework; path = "dependencies/CEGUI-SDK-0.7.1-mac/Frameworks/Release/CEGUIOpenGLRenderer.framework"; sourceTree = "<group>"; };
+		DAC4CAC50E13902B0089198D /* copy.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copy.xpm; sourceTree = "<group>"; };
+		DAC4CAC60E13902B0089198D /* cut.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cut.xpm; sourceTree = "<group>"; };
+		DAC4CAC70E13902B0089198D /* delete.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = delete.xpm; sourceTree = "<group>"; };
+		DAC4CAC80E13902B0089198D /* help.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = help.xpm; sourceTree = "<group>"; };
+		DAC4CAC90E13902B0089198D /* new.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = new.xpm; sourceTree = "<group>"; };
+		DAC4CACA0E13902B0089198D /* open.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = open.xpm; sourceTree = "<group>"; };
+		DAC4CACB0E13902B0089198D /* paste.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = paste.xpm; sourceTree = "<group>"; };
+		DAC4CACC0E13902B0089198D /* save.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = save.xpm; sourceTree = "<group>"; };
+		DAC4CACE0E13902B0089198D /* CEImagesetEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEImagesetEditor.cpp; path = ../src/CEImagesetEditor.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CACF0E13902B0089198D /* DialogAbout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DialogAbout.cpp; path = ../src/DialogAbout.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD00E13902B0089198D /* DialogResourceGroups.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DialogResourceGroups.cpp; path = ../src/DialogResourceGroups.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD10E13902B0089198D /* EditorDocument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EditorDocument.cpp; path = ../src/EditorDocument.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD20E13902B0089198D /* EditorFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EditorFrame.cpp; path = ../src/EditorFrame.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD30E13902B0089198D /* EditorGLCanvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EditorGLCanvas.cpp; path = ../src/EditorGLCanvas.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD40E13902B0089198D /* EditorView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EditorView.cpp; path = ../src/EditorView.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD50E13902B0089198D /* ElasticBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ElasticBox.cpp; path = ../src/ElasticBox.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD60E13902B0089198D /* ElasticBoxProperties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ElasticBoxProperties.cpp; path = ../src/ElasticBoxProperties.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD70E13902B0089198D /* ElasticBoxWindowRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ElasticBoxWindowRenderer.cpp; path = ../src/ElasticBoxWindowRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAD80E13902B0089198D /* ImagesetHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImagesetHandler.cpp; path = ../src/ImagesetHandler.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CADA0E13902B0089198D /* PropertiesPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PropertiesPanel.cpp; path = ../src/PropertiesPanel.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CADB0E13902B0089198D /* wxPathCellEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = wxPathCellEditor.cpp; path = ../src/wxPathCellEditor.cpp; sourceTree = SOURCE_ROOT; };
+		DAC4CAF30E13905C0089198D /* CEGUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEGUIHelper.h; path = ../inc/CEGUIHelper.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAF40E13905C0089198D /* CEImagesetEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEImagesetEditor.h; path = ../inc/CEImagesetEditor.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAF50E13905C0089198D /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = ../inc/Config.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAF60E13905C0089198D /* DialogAbout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DialogAbout.h; path = ../inc/DialogAbout.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAF70E13905C0089198D /* DialogResourceGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DialogResourceGroups.h; path = ../inc/DialogResourceGroups.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAF80E13905C0089198D /* EditorDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditorDocument.h; path = ../inc/EditorDocument.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAF90E13905C0089198D /* EditorFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditorFrame.h; path = ../inc/EditorFrame.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAFA0E13905C0089198D /* EditorGLCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditorGLCanvas.h; path = ../inc/EditorGLCanvas.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAFB0E13905C0089198D /* EditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditorView.h; path = ../inc/EditorView.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAFC0E13905C0089198D /* ElasticBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElasticBox.h; path = ../inc/ElasticBox.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAFD0E13905C0089198D /* ElasticBoxProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElasticBoxProperties.h; path = ../inc/ElasticBoxProperties.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAFE0E13905C0089198D /* ElasticBoxWindowRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElasticBoxWindowRenderer.h; path = ../inc/ElasticBoxWindowRenderer.h; sourceTree = SOURCE_ROOT; };
+		DAC4CAFF0E13905C0089198D /* ImagesetHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagesetHandler.h; path = ../inc/ImagesetHandler.h; sourceTree = SOURCE_ROOT; };
+		DAC4CB000E13905C0089198D /* PropertiesPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertiesPanel.h; path = ../inc/PropertiesPanel.h; sourceTree = SOURCE_ROOT; };
+		DAC4CB010E13905C0089198D /* wxPathCellEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wxPathCellEditor.h; path = ../inc/wxPathCellEditor.h; sourceTree = SOURCE_ROOT; };
+		DAC4CB020E13908B0089198D /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AUTHORS; path = ../AUTHORS; sourceTree = SOURCE_ROOT; };
+		DAC4CB030E13908B0089198D /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ChangeLog; path = ../ChangeLog; sourceTree = SOURCE_ROOT; };
+		DAC4CB040E13908B0089198D /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING; path = ../COPYING; sourceTree = SOURCE_ROOT; };
+		DAC4CB050E13908B0089198D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../README; sourceTree = SOURCE_ROOT; };
+		DAC4CB060E13908B0089198D /* releasenotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = releasenotes.txt; path = ../releasenotes.txt; sourceTree = SOURCE_ROOT; };
+		DAC4CCAB0E1395F20089198D /* libwx_base_carbonu-2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libwx_base_carbonu-2.8.a"; path = "../../../../wxMac-2.8.7/build-release/lib/libwx_base_carbonu-2.8.a"; sourceTree = SOURCE_ROOT; };
+		DAC4CCAC0E1395F20089198D /* libwx_macu_core-2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libwx_macu_core-2.8.a"; path = "../../../../wxMac-2.8.7/build-release/lib/libwx_macu_core-2.8.a"; sourceTree = SOURCE_ROOT; };
+		DAC4CCAD0E1395F20089198D /* libwx_macu_gl-2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libwx_macu_gl-2.8.a"; path = "../../../../wxMac-2.8.7/build-release/lib/libwx_macu_gl-2.8.a"; sourceTree = SOURCE_ROOT; };
+		DAC4CCAE0E1395F20089198D /* libwxjpeg-2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libwxjpeg-2.8.a"; path = "../../../../wxMac-2.8.7/build-release/lib/libwxjpeg-2.8.a"; sourceTree = SOURCE_ROOT; };
+		DAC4CCAF0E1395F20089198D /* libwxpng-2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libwxpng-2.8.a"; path = "../../../../wxMac-2.8.7/build-release/lib/libwxpng-2.8.a"; sourceTree = SOURCE_ROOT; };
+		DAC4CCB00E1395F20089198D /* libwxregexu-2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libwxregexu-2.8.a"; path = "../../../../wxMac-2.8.7/build-release/lib/libwxregexu-2.8.a"; sourceTree = SOURCE_ROOT; };
+		DAC4CCB10E1395F20089198D /* libwxtiff-2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libwxtiff-2.8.a"; path = "../../../../wxMac-2.8.7/build-release/lib/libwxtiff-2.8.a"; sourceTree = SOURCE_ROOT; };
+		DAC4CCC00E1396F80089198D /* libwx_macu_adv-2.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libwx_macu_adv-2.8.a"; path = "../../../../wxMac-2.8.7/build-release/lib/libwx_macu_adv-2.8.a"; sourceTree = SOURCE_ROOT; };
+		DAC4CCC30E1397350089198D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		DAC4CCEC0E1398F10089198D /* CEImagesetEditor.imageset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CEImagesetEditor.imageset; sourceTree = "<group>"; };
+		DAC4CCED0E1398F10089198D /* CEImagesetEditor.looknfeel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CEImagesetEditor.looknfeel; sourceTree = "<group>"; };
+		DAC4CCEE0E1398F10089198D /* CEImagesetEditor.scheme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CEImagesetEditor.scheme; sourceTree = "<group>"; };
+		DAC4CCEF0E1398F10089198D /* CEImagesetEditor.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = CEImagesetEditor.tga; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D0C4E910486CD37000505A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E920486CD37000505A6 /* Carbon.framework in Frameworks */,
+				DAC4CCB20E1395F20089198D /* libwx_base_carbonu-2.8.a in Frameworks */,
+				DAC4CCB30E1395F20089198D /* libwx_macu_core-2.8.a in Frameworks */,
+				DAC4CCB40E1395F20089198D /* libwx_macu_gl-2.8.a in Frameworks */,
+				DAC4CCB50E1395F20089198D /* libwxjpeg-2.8.a in Frameworks */,
+				DAC4CCB60E1395F20089198D /* libwxpng-2.8.a in Frameworks */,
+				DAC4CCB70E1395F20089198D /* libwxregexu-2.8.a in Frameworks */,
+				DAC4CCB80E1395F20089198D /* libwxtiff-2.8.a in Frameworks */,
+				DAC4CCC10E1396F80089198D /* libwx_macu_adv-2.8.a in Frameworks */,
+				DAC4CCC40E1397350089198D /* OpenGL.framework in Frameworks */,
+				DA57032E11217F26005B4B34 /* CEGUIBase.framework in Frameworks */,
+				DA57033011217F26005B4B34 /* CEGUIOpenGLRenderer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		195DF8CFFE9D517E11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D0C4E970486CD37000505A6 /* CEImagesetEditor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20286C29FDCF999611CA2CEA /* CEImagesetEditor */ = {
+			isa = PBXGroup;
+			children = (
+				20286C2AFDCF999611CA2CEA /* Sources */,
+				DAC4CAC30E138FF20089198D /* Headers */,
+				20286C2CFDCF999611CA2CEA /* Resources */,
+				20286C32FDCF999611CA2CEA /* External Frameworks and Libraries */,
+				195DF8CFFE9D517E11CA2CBB /* Products */,
+			);
+			name = CEImagesetEditor;
+			sourceTree = "<group>";
+		};
+		20286C2AFDCF999611CA2CEA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DAC4CACE0E13902B0089198D /* CEImagesetEditor.cpp */,
+				DAC4CACF0E13902B0089198D /* DialogAbout.cpp */,
+				DAC4CAD00E13902B0089198D /* DialogResourceGroups.cpp */,
+				DAC4CAD10E13902B0089198D /* EditorDocument.cpp */,
+				DAC4CAD20E13902B0089198D /* EditorFrame.cpp */,
+				DAC4CAD30E13902B0089198D /* EditorGLCanvas.cpp */,
+				DAC4CAD40E13902B0089198D /* EditorView.cpp */,
+				DAC4CAD50E13902B0089198D /* ElasticBox.cpp */,
+				DAC4CAD60E13902B0089198D /* ElasticBoxProperties.cpp */,
+				DAC4CAD70E13902B0089198D /* ElasticBoxWindowRenderer.cpp */,
+				DAC4CAD80E13902B0089198D /* ImagesetHandler.cpp */,
+				DAC4CADA0E13902B0089198D /* PropertiesPanel.cpp */,
+				DAC4CADB0E13902B0089198D /* wxPathCellEditor.cpp */,
+				32DBCF6D0370B57F00C91783 /* CEImagesetEditor_Prefix.pch */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		20286C2CFDCF999611CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAC4CAC40E13902B0089198D /* bitmaps */,
+				DAC4CCEB0E1398F10089198D /* data */,
+				DAC4CB020E13908B0089198D /* AUTHORS */,
+				DAC4CB030E13908B0089198D /* ChangeLog */,
+				DAC4CB040E13908B0089198D /* COPYING */,
+				DAC4CB050E13908B0089198D /* README */,
+				DAC4CB060E13908B0089198D /* releasenotes.txt */,
+				8D0C4E960486CD37000505A6 /* Info.plist */,
+				0867D6AAFE840B52C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		20286C32FDCF999611CA2CEA /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				DA57032D11217F26005B4B34 /* CEGUIBase.framework */,
+				DA57032F11217F26005B4B34 /* CEGUIOpenGLRenderer.framework */,
+				20286C33FDCF999611CA2CEA /* Carbon.framework */,
+				DAC4CCC30E1397350089198D /* OpenGL.framework */,
+				DAC4CCAB0E1395F20089198D /* libwx_base_carbonu-2.8.a */,
+				DAC4CCC00E1396F80089198D /* libwx_macu_adv-2.8.a */,
+				DAC4CCAC0E1395F20089198D /* libwx_macu_core-2.8.a */,
+				DAC4CCAD0E1395F20089198D /* libwx_macu_gl-2.8.a */,
+				DAC4CCAE0E1395F20089198D /* libwxjpeg-2.8.a */,
+				DAC4CCAF0E1395F20089198D /* libwxpng-2.8.a */,
+				DAC4CCB00E1395F20089198D /* libwxregexu-2.8.a */,
+				DAC4CCB10E1395F20089198D /* libwxtiff-2.8.a */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		DAC4CAC30E138FF20089198D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DAC4CAF30E13905C0089198D /* CEGUIHelper.h */,
+				DAC4CAF40E13905C0089198D /* CEImagesetEditor.h */,
+				DAC4CAF50E13905C0089198D /* Config.h */,
+				DAC4CAF60E13905C0089198D /* DialogAbout.h */,
+				DAC4CAF70E13905C0089198D /* DialogResourceGroups.h */,
+				DAC4CAF80E13905C0089198D /* EditorDocument.h */,
+				DAC4CAF90E13905C0089198D /* EditorFrame.h */,
+				DAC4CAFA0E13905C0089198D /* EditorGLCanvas.h */,
+				DAC4CAFB0E13905C0089198D /* EditorView.h */,
+				DAC4CAFC0E13905C0089198D /* ElasticBox.h */,
+				DAC4CAFD0E13905C0089198D /* ElasticBoxProperties.h */,
+				DAC4CAFE0E13905C0089198D /* ElasticBoxWindowRenderer.h */,
+				DAC4CAFF0E13905C0089198D /* ImagesetHandler.h */,
+				DAC4CB000E13905C0089198D /* PropertiesPanel.h */,
+				DAC4CB010E13905C0089198D /* wxPathCellEditor.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		DAC4CAC40E13902B0089198D /* bitmaps */ = {
+			isa = PBXGroup;
+			children = (
+				DAC4CAC50E13902B0089198D /* copy.xpm */,
+				DAC4CAC60E13902B0089198D /* cut.xpm */,
+				DAC4CAC70E13902B0089198D /* delete.xpm */,
+				DAC4CAC80E13902B0089198D /* help.xpm */,
+				DAC4CAC90E13902B0089198D /* new.xpm */,
+				DAC4CACA0E13902B0089198D /* open.xpm */,
+				DAC4CACB0E13902B0089198D /* paste.xpm */,
+				DAC4CACC0E13902B0089198D /* save.xpm */,
+			);
+			name = bitmaps;
+			path = ../src/bitmaps;
+			sourceTree = SOURCE_ROOT;
+		};
+		DAC4CCEB0E1398F10089198D /* data */ = {
+			isa = PBXGroup;
+			children = (
+				DAC4CCEC0E1398F10089198D /* CEImagesetEditor.imageset */,
+				DAC4CCED0E1398F10089198D /* CEImagesetEditor.looknfeel */,
+				DAC4CCEE0E1398F10089198D /* CEImagesetEditor.scheme */,
+				DAC4CCEF0E1398F10089198D /* CEImagesetEditor.tga */,
+			);
+			name = data;
+			path = ../data;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D0C4E890486CD37000505A6 /* CEImagesetEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0E91AC508A95435008D54AB /* Build configuration list for PBXNativeTarget "CEImagesetEditor" */;
+			buildPhases = (
+				8D0C4E8C0486CD37000505A6 /* Resources */,
+				8D0C4E8F0486CD37000505A6 /* Sources */,
+				8D0C4E910486CD37000505A6 /* Frameworks */,
+				DAC4CD050E13AB130089198D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CEImagesetEditor;
+			productInstallPath = "$(HOME)/Applications";
+			productName = CEImagesetEditor;
+			productReference = 8D0C4E970486CD37000505A6 /* CEImagesetEditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20286C28FDCF999611CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C0E91AC908A95435008D54AB /* Build configuration list for PBXProject "CEImagesetEditor" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 20286C29FDCF999611CA2CEA /* CEImagesetEditor */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D0C4E890486CD37000505A6 /* CEImagesetEditor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D0C4E8C0486CD37000505A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E8D0486CD37000505A6 /* InfoPlist.strings in Resources */,
+				DAC4CB070E13908B0089198D /* AUTHORS in Resources */,
+				DAC4CB080E13908B0089198D /* ChangeLog in Resources */,
+				DAC4CB090E13908B0089198D /* COPYING in Resources */,
+				DAC4CB0A0E13908B0089198D /* README in Resources */,
+				DAC4CB0B0E13908B0089198D /* releasenotes.txt in Resources */,
+				DAC4CCF00E1398F10089198D /* CEImagesetEditor.imageset in Resources */,
+				DAC4CCF10E1398F10089198D /* CEImagesetEditor.looknfeel in Resources */,
+				DAC4CCF20E1398F10089198D /* CEImagesetEditor.scheme in Resources */,
+				DAC4CCF30E1398F10089198D /* CEImagesetEditor.tga in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DAC4CD050E13AB130089198D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Copy CEGUI frameworks and bundles\nrsync -rl \"${CEGUI_SDK_DIR}/Frameworks/${CONFIGURATION}/CEGUIBase.framework\" \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\nrsync -rl \"${CEGUI_SDK_DIR}/Frameworks/${CONFIGURATION}/CEGUIOpenGLRenderer.framework\" \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\nrsync -rl \"${CEGUI_SDK_DIR}/PlugInBundles/${CONFIGURATION}/CEGUIExpatParser.bundle\" \"${TARGET_BUILD_DIR}/${PLUGINS_FOLDER_PATH}/\"\nrsync -rl \"${CEGUI_SDK_DIR}/PlugInBundles/${CONFIGURATION}/CEGUISILLYImageCodec.bundle\" \"${TARGET_BUILD_DIR}/${PLUGINS_FOLDER_PATH}/\"\nrsync -rl \"${CEGUI_SDK_DIR}/PlugInBundles/${CONFIGURATION}/CEGUIFalagardWRBase.bundle\" \"${TARGET_BUILD_DIR}/${PLUGINS_FOLDER_PATH}/\"\n\n# strip headers from embedded frameworks; we just want the libs\nrm \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CEGUIBase.framework/Headers\" &> /dev/null\nrm -rf \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CEGUIBase.framework/Versions/Current/Headers\" &> /dev/null\nrm \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CEGUIOpenGLRenderer.framework/Headers\" &> /dev/null\nrm -rf \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CEGUIOpenGLRenderer.framework/Versions/Current/Headers\" &> /dev/null\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D0C4E8F0486CD37000505A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC4CAE50E13902B0089198D /* CEImagesetEditor.cpp in Sources */,
+				DAC4CAE60E13902B0089198D /* DialogAbout.cpp in Sources */,
+				DAC4CAE70E13902B0089198D /* DialogResourceGroups.cpp in Sources */,
+				DAC4CAE80E13902B0089198D /* EditorDocument.cpp in Sources */,
+				DAC4CAE90E13902B0089198D /* EditorFrame.cpp in Sources */,
+				DAC4CAEA0E13902B0089198D /* EditorGLCanvas.cpp in Sources */,
+				DAC4CAEB0E13902B0089198D /* EditorView.cpp in Sources */,
+				DAC4CAEC0E13902B0089198D /* ElasticBox.cpp in Sources */,
+				DAC4CAED0E13902B0089198D /* ElasticBoxProperties.cpp in Sources */,
+				DAC4CAEE0E13902B0089198D /* ElasticBoxWindowRenderer.cpp in Sources */,
+				DAC4CAEF0E13902B0089198D /* ImagesetHandler.cpp in Sources */,
+				DAC4CAF10E13902B0089198D /* PropertiesPanel.cpp in Sources */,
+				DAC4CAF20E13902B0089198D /* wxPathCellEditor.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0867D6AAFE840B52C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0867D6ABFE840B52C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0E91AC608A95435008D54AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CEGUI_HEADER_SEARCH_PATHS = "$CEGUI_SDK_DIR/Frameworks/$(CONFIGURATION)/CEGUIBase.framework/Headers";
+				CEGUI_SDK_DIR = "./dependencies/CEGUI-SDK-0.7.1-mac";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$CEGUI_SDK_DIR/Frameworks/$(CONFIGURATION)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/dependencies/CEGUI-SDK-0.7.1-mac/Frameworks/Release\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CEImagesetEditor_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = $WX_PREPROCESSOR_MACROS;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = 4.0;
+				HEADER_SEARCH_PATHS = (
+					$CEGUI_HEADER_SEARCH_PATHS,
+					$WX_HEADER_SEARCH_PATHS,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					$WX_LIBRARY_SEARCH_PATHS,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				OTHER_LDFLAGS = $WX_LINKER_FLAGS;
+				PRODUCT_NAME = CEImagesetEditor;
+				WRAPPER_EXTENSION = app;
+				WX_BASE_DIR = "../../../../wxMac-2.8.10";
+				WX_BUILD_CONFIG_NAME = "mac-unicode-release-static-2.8";
+				WX_BUILD_DIR = "$WX_BASE_DIR/build-release";
+				WX_HEADER_SEARCH_PATHS = "$WX_BUILD_DIR/lib/wx/include/$WX_BUILD_CONFIG_NAME $WX_BASE_DIR/include $WX_BASE_DIR/contrib/include";
+				WX_LIBRARY_SEARCH_PATHS = $WX_BUILD_DIR/lib;
+				WX_LINKER_FLAGS = "-framework IOKit -framework Carbon -framework Cocoa -framework System -framework QuickTime -framework AGL -lz -lpthread -liconv";
+				WX_PREPROCESSOR_MACROS = "_FILE_OFFSET_BITS=64 _LARGE_FILES __WXMAC__";
+			};
+			name = Debug;
+		};
+		C0E91AC708A95435008D54AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CEGUI_HEADER_SEARCH_PATHS = "$CEGUI_SDK_DIR/Frameworks/$(CONFIGURATION)/CEGUIBase.framework/Headers";
+				CEGUI_SDK_DIR = "./dependencies/CEGUI-SDK-0.7.1-mac";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$CEGUI_SDK_DIR/Frameworks/$(CONFIGURATION)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/dependencies/CEGUI-SDK-0.7.1-mac/Frameworks/Release\"";
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CEImagesetEditor_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = $WX_PREPROCESSOR_MACROS;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = 4.0;
+				HEADER_SEARCH_PATHS = (
+					$CEGUI_HEADER_SEARCH_PATHS,
+					$WX_HEADER_SEARCH_PATHS,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					$WX_LIBRARY_SEARCH_PATHS,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				OTHER_LDFLAGS = $WX_LINKER_FLAGS;
+				PRODUCT_NAME = CEImagesetEditor;
+				WRAPPER_EXTENSION = app;
+				WX_BASE_DIR = "../../../../wxMac-2.8.10";
+				WX_BUILD_CONFIG_NAME = "mac-unicode-release-static-2.8";
+				WX_BUILD_DIR = "$WX_BASE_DIR/build-release";
+				WX_HEADER_SEARCH_PATHS = "$WX_BUILD_DIR/lib/wx/include/$WX_BUILD_CONFIG_NAME $WX_BASE_DIR/include $WX_BASE_DIR/contrib/include";
+				WX_LIBRARY_SEARCH_PATHS = $WX_BUILD_DIR/lib;
+				WX_LINKER_FLAGS = "-framework IOKit -framework Carbon -framework Cocoa -framework System -framework QuickTime -framework AGL -lz -lpthread -liconv";
+				WX_PREPROCESSOR_MACROS = "_FILE_OFFSET_BITS=64 _LARGE_FILES __WXMAC__";
+			};
+			name = Release;
+		};
+		C0E91ACA08A95435008D54AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C0E91ACB08A95435008D54AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0E91AC508A95435008D54AB /* Build configuration list for PBXNativeTarget "CEImagesetEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E91AC608A95435008D54AB /* Debug */,
+				C0E91AC708A95435008D54AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0E91AC908A95435008D54AB /* Build configuration list for PBXProject "CEImagesetEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E91ACA08A95435008D54AB /* Debug */,
+				C0E91ACB08A95435008D54AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20286C28FDCF999611CA2CEA /* Project object */;
+}

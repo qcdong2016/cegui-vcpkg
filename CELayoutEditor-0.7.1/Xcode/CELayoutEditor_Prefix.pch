@@ -1,0 +1,6 @@
+//
+// Prefix header for all source files of the 'CELayoutEditor' target in the 'CELayoutEditor' project.
+//
+
+#include <Carbon/Carbon.h>
+#include "pch.h"
