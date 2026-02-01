@@ -96,32 +96,32 @@ void PropertiesPanel::createContent()
     // general properties section
     wxStaticText* lblProps = new wxStaticText( this, ID_TEXT, wxT( "Properties" ), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE );
     lblProps->SetBackgroundColour( *wxGREEN );
-    sizerProps->Add( lblProps, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxALL, 0 );
+    sizerProps->Add( lblProps, 0, wxGROW | wxALL, 0 );
 
     // START ----------------------------------------------------------------------------
     // imageset name selector
     wxStaticText* lblImagesetName = new wxStaticText( this, ID_TEXT, wxT( "Imageset name :" ), wxDefaultPosition, wxDefaultSize, 0 );
-    sizerProps->Add( lblImagesetName, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxLEFT | wxRIGHT | wxTOP, 5 );
+    sizerProps->Add( lblImagesetName, 0, wxGROW | wxLEFT | wxRIGHT | wxTOP, 5 );
 
     m_imagesetNameTextCtrl = new wxTextCtrl( this, ID_IMAGESETNAME_TEXTCTRL, wxT( "" ), wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER );
-    sizerProps->Add( m_imagesetNameTextCtrl, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxLEFT | wxRIGHT, 5 );
+    sizerProps->Add( m_imagesetNameTextCtrl, 0, wxGROW | wxLEFT | wxRIGHT, 5 );
     // END ------------------------------------------------------------------------------
 
     // START ----------------------------------------------------------------------------
     // image file selector
     wxStaticText* lblImageFile = new wxStaticText( this, ID_TEXT, wxT( "Image file :" ), wxDefaultPosition, wxDefaultSize, 0 );
-    sizerProps->Add( lblImageFile, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxLEFT | wxRIGHT | wxTOP, 5 );
+    sizerProps->Add( lblImageFile, 0, wxGROW | wxLEFT | wxRIGHT | wxTOP, 5 );
 
     wxBoxSizer* sizerImageFile = new wxBoxSizer( wxHORIZONTAL );
 
     m_imageFilenameTextCtrl = new wxTextCtrl( this, ID_IMAGE_FILENAME_TEXTCTRL, wxT( "" ), wxDefaultPosition, wxSize( 175, -1 ), wxTE_PROCESS_ENTER );
-    sizerImageFile->Add( m_imageFilenameTextCtrl, 1, wxGROW | wxALIGN_CENTER_HORIZONTAL | wxALL, 0 );
+    sizerImageFile->Add( m_imageFilenameTextCtrl, 1, wxGROW | wxALL, 0 );
 
     m_imageFilenameBrowseButton = new wxButton( this, ID_IMAGE_FILENAME_BROWSE_BUTTON, wxT( "..." ), wxDefaultPosition, wxSize( 20, -1 ), 0 );
-    sizerImageFile->Add( m_imageFilenameBrowseButton, 0, wxALIGN_BOTTOM | wxALIGN_CENTER_HORIZONTAL | wxALL, 0 );
+    sizerImageFile->Add( m_imageFilenameBrowseButton, 0, wxALIGN_BOTTOM | wxALL, 0 );
 
     // add the image file selector to the props panel
-    sizerProps->Add( sizerImageFile, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxLEFT | wxRIGHT, 5 );
+    sizerProps->Add( sizerImageFile, 0, wxGROW | wxLEFT | wxRIGHT, 5 );
     // END ------------------------------------------------------------------------------
 
     // START ----------------------------------------------------------------------------
@@ -129,7 +129,7 @@ void PropertiesPanel::createContent()
     wxGridSizer* sizerNativeResolution = new wxGridSizer( 2, 2, 0, 5 );
 
     wxStaticText* lblNativeResolution = new wxStaticText( this, ID_TEXT, wxT( "Native resolution :" ), wxDefaultPosition, wxDefaultSize, 0 );
-    sizerNativeResolution->Add( lblNativeResolution, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxLEFT | wxRIGHT | wxTOP, 0 );
+    sizerNativeResolution->Add( lblNativeResolution, 0, wxGROW | wxLEFT | wxRIGHT | wxTOP, 0 );
 
     sizerNativeResolution->AddSpacer( 0 );
 
@@ -144,27 +144,27 @@ void PropertiesPanel::createContent()
     };
 
     m_nativeResolutionComboBox = new wxComboBox( this, ID_NATIVE_RESOLUTION_COMBO, wxT( "" ), wxDefaultPosition, wxDefaultSize, 5, strs14, wxCB_DROPDOWN );
-    sizerNativeResolution->Add( m_nativeResolutionComboBox, 1, wxGROW | wxALIGN_CENTER | wxLEFT | wxRIGHT, 0 );
+    sizerNativeResolution->Add( m_nativeResolutionComboBox, 1, wxGROW | wxLEFT | wxRIGHT, 0 );
 
     // to choice if the image set is auto scaled
     m_autoScaleCheckbox = new wxCheckBox( this, ID_AUTOSCALE_CHECKBOX, wxT( "Auto scaled" ), wxDefaultPosition, wxDefaultSize, 0 );
-    sizerNativeResolution->Add( m_autoScaleCheckbox, 0, wxALIGN_CENTER_VERTICAL | wxALL, 0 );
+    sizerNativeResolution->Add( m_autoScaleCheckbox, 0, wxALL, 0 );
 
     // add the native resolution selector to the props panel
-    sizerProps->Add( sizerNativeResolution, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxALL, 5 );
+    sizerProps->Add( sizerNativeResolution, 0, wxGROW | wxALL, 5 );
     // END ------------------------------------------------------------------------------
 
     // sets properties section
     wxStaticText* lblImageSet = new wxStaticText( this, ID_TEXT, wxT( "Image definitions" ), wxDefaultPosition, wxSize( 250, -1 ), wxALIGN_CENTRE );
     lblImageSet->SetBackgroundColour( *wxGREEN );
-    sizerProps->Add( lblImageSet, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxALL, 0 );
+    sizerProps->Add( lblImageSet, 0, wxGROW | wxALL, 0 );
 
     // Create toolbar with icons-only
     wxToolBar* toolBar = new wxToolBar( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_HORIZONTAL ); // |wxNO_BORDER
     //
     toolBar->AddTool( ID_GRID_ADD_ROW, "", wxBitmap(new_xpm));
     toolBar->AddTool( ID_GRID_DEL_ROW, "", wxBitmap ( cut_xpm ) );
-    sizerProps->Add( toolBar, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxLEFT | wxRIGHT | wxTOP, 5 );
+    sizerProps->Add( toolBar, 0, wxGROW | wxLEFT | wxRIGHT | wxTOP, 5 );
     // Don't forget this one!
     toolBar->Realize();
 
@@ -172,7 +172,7 @@ void PropertiesPanel::createContent()
     createPropertiesGrid( this );
 
     // add sets properties grid to the props panel
-    sizerProps->Add( m_propertiesGrid, 1, wxGROW | wxALIGN_CENTER_VERTICAL | wxALL, 5 );
+    sizerProps->Add( m_propertiesGrid, 1, wxGROW | wxALL, 5 );
     // END ----------------------------------------------------------------------------
 
     // set initial state
