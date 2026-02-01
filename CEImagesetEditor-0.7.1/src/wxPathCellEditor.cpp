@@ -66,7 +66,7 @@ void wxPathCellEditor::Create( wxWindow* parent,
     m_text = new wxTextCtrl( m_control, ID_DIRECTORY_TEXT, wxEmptyString,
                              wxDefaultPosition, wxDefaultSize
 #if defined(__WXMSW__)
-                             , wxTE_PROCESS_TAB | wxTE_AUTO_SCROLL | wxNO_BORDER
+                             , wxTE_PROCESS_TAB | wxNO_BORDER
 #endif
                            );
 
@@ -165,7 +165,8 @@ void wxPathCellEditor::DoBeginEdit( const wxString& startValue )
 }
 
 //--------------------------------------------------------------------------------
-bool wxPathCellEditor::EndEdit( int row, int col, wxGrid* grid )
+bool wxPathCellEditor::EndEdit(int row, int col, const wxGrid *grid,
+                         const wxString& oldval, wxString *newval)
 {
     wxASSERT_MSG( m_control, wxT( "The wxGridCellEditor must be created first!" ) );
 

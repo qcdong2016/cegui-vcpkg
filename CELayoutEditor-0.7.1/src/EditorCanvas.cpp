@@ -58,7 +58,7 @@ mCurrentHeight(-1),
 mLastMouseX(-1),
 mLastMouseY(-1),
 
-wxGLCanvas(frame, wx_static_cast(wxGLCanvas*, NULL), -1, pos, size, wxNO_BORDER )
+wxGLCanvas(frame, wxID_ANY, NULL, pos, size, wxNO_BORDER )
 {
     // NOTE: Prefer constructor initialization lists (which are 
     // often more efficient) to assignment inside the 
@@ -68,7 +68,7 @@ wxGLCanvas(frame, wx_static_cast(wxGLCanvas*, NULL), -1, pos, size, wxNO_BORDER 
     // See item 4 in 'Effective C++ 3rd Edition' by Scott Meyers
 
     // Init one-time-only stuff
-    SetCurrent();
+    SetCurrent(this);
 
     glShadeModel(GL_SMOOTH);
     glEnable(GL_DEPTH_TEST);
@@ -145,7 +145,7 @@ void EditorCanvas::Render()
 {
     if (m_view && m_view->GetDocument())
     {
-        SetCurrent();
+        SetCurrent(this);
 
         // clear color and depth buffers
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

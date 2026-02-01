@@ -48,8 +48,9 @@ public:
 
     virtual bool IsAcceptedKey(wxKeyEvent& event);
     virtual void BeginEdit(int row, int col, wxGrid* grid);
-    virtual bool EndEdit(int row, int col, wxGrid* grid);
-
+    virtual bool EndEdit(int row, int col, const wxGrid *grid,
+                         const wxString& oldval, wxString *newval);
+    virtual void ApplyEdit(int row, int col, wxGrid* grid) {};
     virtual void Reset();
     virtual void StartingKey(wxKeyEvent& event);
     virtual void HandleReturn(wxKeyEvent& event);

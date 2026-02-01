@@ -343,7 +343,7 @@ void DialogMain::ClearGrid()
 {
     if(m_grid)
     {
-        const int oldRowCount = m_grid->GetRows();
+        const int oldRowCount = m_grid->GetNumberRows();
         if (oldRowCount > 0)
         {
             (void)m_grid->DeleteRows(0, oldRowCount);
@@ -645,7 +645,7 @@ void DialogMain::AddPropertyRow(wxGridCellEditor* editor, const wxString& proper
 
     // Add a row, and store the editor + set initial value
     (void)m_grid->AppendRows(1, true);
-    const int newRowIndex = m_grid->GetRows() - 1;
+    const int newRowIndex = m_grid->GetNumberRows() - 1;
 
     // Set the specified editor
     m_grid->SetCellEditor(newRowIndex, COLUMN_VALUE, editor);
@@ -1461,7 +1461,7 @@ void DialogMain::OnSaveSelection(wxCommandEvent& WXUNUSED(event))
     // will happen in this folder, including saving of layouts and such.
     const wxString currentDirectory = wxGetCwd();
 
-    wxFileDialog dialog(this, wxT("Open a layout"), currentDirectory, wxT(""), wxT("Layout files (*.xml;*.layout;*.*)|*.xml;*.layout;*.*"), wxSAVE);
+    wxFileDialog dialog(this, wxT("Open a layout"), currentDirectory, wxT(""), wxT("Layout files (*.xml;*.layout;*.*)|*.xml;*.layout;*.*"));
     if (dialog.ShowModal() == wxID_OK)
     {
         m_document->SaveFromWindow(m_currentWindow,dialog.GetPath());

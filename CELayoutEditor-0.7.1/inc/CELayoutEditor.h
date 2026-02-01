@@ -227,25 +227,6 @@ protected:
      */
     void ClearAllEvents() const;
 
-#if wxUSE_DEBUGREPORT
-    /** This function creates a standard debug report based on the current debug context. 
-     * It can also display a preview window (via wxDebugReportPreviewStd) allowing the 
-     * user to examine the contents of the debug report, remove files from and add 
-     * notes to it. The user can also cancel the report by pressing the cancel button. If no 
-     * preview window is supplied, the debug report is automatically created with default 
-     * settings. By default, it  attaches the current log file (CELayoutEditor.log) and the CELayoutEditor 
-     * configuration file (CELayoutEditor.ini).
-     * @access protected 
-     * @qualifier const
-     * @param ctx Current debug context used to generate the report
-     * @param showPreview Indicates if a preview window should be displayed (true) or 
-     * not (false)
-     * @return void
-     * @remarks This function should only be called when a fatal exception occurs
-     * or unpredictable results might occur (including wxWidgets assert violations)
-     */
-    void GenerateDebugReport(wxDebugReport::Context ctx, const bool showPreview = true) const;
-#endif
 
     /** Performs various cleanups in order to allow a safe exit.
      * @access protected 
@@ -566,15 +547,15 @@ void LogSilentTrace(const wxChar *szFormat, ...);
 #define SHOW_EXCEPTION(location, CEGUITxt, standardTxt, nonStandardTxt)\
     catch(const CEGUI::Exception& guiException)\
     {\
-        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(CEGUITxt), StringHelper::ToWXString(guiException.getMessage()), StringHelper::ToWXString(guiException.getFileName()), guiException.getLine()));\
+        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (CEGUITxt), StringHelper::ToWXString(guiException.getMessage()), StringHelper::ToWXString(guiException.getFileName()), guiException.getLine()));\
     }\
     catch(const std::exception& ex)\
     {\
-        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(standardTxt), StringHelper::ToWXString(ex.what())));\
+        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (standardTxt), (ex.what())));\
     }\
     catch ( ... )\
     {\
-        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(nonStandardTxt)));\
+        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (nonStandardTxt)));\
     }
 
 /** Macro that catches, logs and shows the the thrown exception (either CEGUI based, standard 
@@ -597,17 +578,17 @@ void LogSilentTrace(const wxChar *szFormat, ...);
 #define SHOW_EXCEPTION_RETURN(location, CEGUITxt, standardTxt, nonStandardTxt, returnValue)\
     catch(const CEGUI::Exception& guiException)\
     {\
-        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(CEGUITxt), StringHelper::ToWXString(guiException.getMessage()), StringHelper::ToWXString(guiException.getFileName()), guiException.getLine()));\
+        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (CEGUITxt), StringHelper::ToWXString(guiException.getMessage()), StringHelper::ToWXString(guiException.getFileName()), guiException.getLine()));\
         return returnValue;\
     }\
     catch(const std::exception& ex)\
     {\
-        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(standardTxt), StringHelper::ToWXString(ex.what())));\
+        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (standardTxt), (ex.what())));\
         return returnValue;\
     }\
     catch ( ... )\
     {\
-        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(nonStandardTxt)));\
+        LogError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (nonStandardTxt)));\
         return returnValue;\
     }
 
@@ -628,15 +609,15 @@ void LogSilentTrace(const wxChar *szFormat, ...);
 #define LOG_EXCEPTION(location, CEGUITxt, standardTxt, nonStandardTxt)\
     catch(const CEGUI::Exception& guiException)\
     {\
-        LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(CEGUITxt), StringHelper::ToWXString(guiException.getMessage()), StringHelper::ToWXString(guiException.getFileName()), guiException.getLine()));\
+        LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (CEGUITxt), StringHelper::ToWXString(guiException.getMessage()), StringHelper::ToWXString(guiException.getFileName()), guiException.getLine()));\
     }\
     catch(const std::exception& ex)\
     {\
-        LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(standardTxt), StringHelper::ToWXString(ex.what())));\
+        LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (standardTxt), (ex.what())));\
     }\
     catch ( ... )\
     {\
-        LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(nonStandardTxt)));\
+        LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (nonStandardTxt)));\
     }
 
 /** Macro that catches and logs the thrown exception (either CEGUI based, standard 
@@ -666,7 +647,7 @@ void LogSilentTrace(const wxChar *szFormat, ...);
     {\
         try\
         {\
-            LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(CEGUITxt), StringHelper::ToWXString(guiException.getMessage()), StringHelper::ToWXString(guiException.getFileName()), guiException.getLine()));\
+            LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (CEGUITxt), StringHelper::ToWXString(guiException.getMessage()), StringHelper::ToWXString(guiException.getFileName()), guiException.getLine()));\
         }\
         catch(...) {} \
     }\
@@ -674,7 +655,7 @@ void LogSilentTrace(const wxChar *szFormat, ...);
     {\
         try\
         {\
-            LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(standardTxt), StringHelper::ToWXString(ex.what())));\
+            LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (standardTxt), (ex.what())));\
         }\
         catch(...) {} \
     }\
@@ -682,7 +663,7 @@ void LogSilentTrace(const wxChar *szFormat, ...);
     {\
         try\
         {\
-            LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo(StringHelper::ToWXString(location), StringHelper::ToWXString(nonStandardTxt)));\
+            LogSilentError(ExceptionManager::GetInstancePtr()->GetExceptionInfo((location), (nonStandardTxt)));\
         }\
         catch(...) {} \
     }

@@ -69,7 +69,7 @@ END_EVENT_TABLE()
 
 //-----------------------------------------------------------------------
 EditorGLCanvas::EditorGLCanvas( EditorView* v, wxWindow* parent, const wxPoint& pos, const wxSize& size ) :
-    wxGLCanvas( parent, static_cast<const wxGLContext *>( 0 ), -1, pos, size , wxSUNKEN_BORDER | wxVSCROLL | wxHSCROLL ),
+    wxGLCanvas( parent, wxID_ANY, NULL, pos, size , wxSUNKEN_BORDER | wxVSCROLL | wxHSCROLL ),
     m_view( v ),
     m_GUISystem( 0 ),
     m_GUIRenderer( 0 ),
@@ -86,7 +86,7 @@ EditorGLCanvas::EditorGLCanvas( EditorView* v, wxWindow* parent, const wxPoint& 
     m_scrollPageY( 0 )
 {
     // Init one-time-only stuff
-    SetCurrent();
+    SetCurrent(this);
 
     // we will use a cross-hair cursor
     SetCursor( wxCURSOR_CROSS );
@@ -673,7 +673,7 @@ bool EditorGLCanvas::Reset()
 //-----------------------------------------------------------------------
 void EditorGLCanvas::Render()
 {
-    SetCurrent();
+    SetCurrent(this);
 
     // clear colour buffer
     glClear( GL_COLOR_BUFFER_BIT );

@@ -62,21 +62,6 @@
 
 #include <stdexcept>
 
-#ifdef _MSC_VER
-# if defined(DEBUG) || defined (_DEBUG)
-#	if defined(CEGUI_STATIC)
-#		pragma comment (lib, "CEGUIOpenGLRenderer_Static_d.lib")
-#	else
-#		pragma comment (lib, "CEGUIOpenGLRenderer_d.lib")
-#	endif
-# else
-#	if defined(CEGUI_STATIC)
-#		pragma comment (lib, "CEGUIOpenGLRenderer_Static.lib")
-#	else
-#		pragma comment (lib, "CEGUIOpenGLRenderer.lib")
-#	endif
-# endif
-#endif
 
 
 /*************************************************************************

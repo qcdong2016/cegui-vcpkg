@@ -554,95 +554,15 @@ void CELayoutEditor::OnUnhandledException()
 //-----------------------------------------------------------------------
 void CELayoutEditor::OnFatalException()
 {
-    // Check if wxWidgets was built with debug report support
-    #if wxUSE_DEBUGREPORT
-        // We have debug reports, so so inform the user of the fatal error and the possibility of a
-        // debug report generation
-        // NOTE: Unlike unhandled exceptions which can be customized, fatal exceptions 
-        // are ALWAYS shown to user
-        (void)CELEMessageBox(wxT("CELayoutEditor::OnFatalException - CELayoutEditor has encountered a fatal exception and needs to terminate. A debug report will be generated if you desire."),
-                             wxT("CELayoutEditor Fatal Exception"),
-                             CELE_MB_TYPE_OK | CELE_MB_ICON_STOP | CELE_MB_SYSTEMMODAL);
 
-        // Create a debug report (with the current system state, stack trace, log file and configuration file) that
-        // the user can save or ignore
-        GenerateDebugReport(wxDebugReport::Context_Exception);
-    #else
         // No debug report, so inform user of fatal error and exit application
         // NOTE: Unlike unhandled exceptions which can be customized, fatal exceptions 
         // are ALWAYS shown to user
         (void)CELEMessageBox(wxT("CELayoutEditor::OnFatalException - CELayoutEditor has encountered a fatal exception and needs to terminate. We're sorry for the inconvenience!"),
                              wxT("CELayoutEditor Fatal Exception"),
                              CELE_MB_TYPE_OK | CELE_MB_ICON_STOP | CELE_MB_SYSTEMMODAL);
-    #endif // wxUSE_DEBUGREPORT    
+
 }
-
-//-----------------------------------------------------------------------
-#if wxUSE_DEBUGREPORT
-void CELayoutEditor::GenerateDebugReport(wxDebugReport::Context ctx, const bool showPreview) const
-{
-    // Create a debug report with the program's current state. All the files
-    // that we'll be added to it will be compressed into a single .ZIP file.
-    wxDebugReportCompress *report = new wxDebugReportCompress;
-
-    // Adds all available information to the report. Currently this includes a 
-    // text (XML) file describing the process context (system info + stack trace) 
-    // and, under Win32, a minidump file.
-    report->AddAll(ctx);
-
-    // Create a timestamp file which contains the date and time of the crash.
-    wxFileName fn(report->GetDirectory(), wxT("timestamp.my"));
-    wxFFile file(fn.GetFullPath(), wxT("w"));
-    if ( file.IsOpened() )
-    {
-        const wxDateTime dt = wxDateTime::Now();
-        (void)file.Write(dt.FormatISODate() + wxT(' ') + dt.FormatISOTime());
-        (void)file.Close();
-    }
-
-    // Add timestamp file to debug report
-    report->AddFile(fn.GetFullName(), wxT("timestamp of this report"));
-
-    // We also add the current log file (CELayoutEditor.log) and configuration 
-    // file (CELayoutEditor.ini) to the debug report
-    #ifdef __WINDOWS__
-        report->AddFile(wxGetCwd() + wxT("\\CELayoutEditor.log"), wxT("CELayoutEditor log file"));
-        report->AddFile(wxGetCwd() + wxT("\\CELayoutEditor.ini"), wxT("CELayoutEditor configuration file"));
-    #else
-        report->AddFile(wxGetCwd() + wxT("/CELayoutEditor.log"), wxT("CELayoutEditor log file"));
-        report->AddFile(wxGetCwd() + wxT("/CELayoutEditor.ini"), wxT("CELayoutEditor configuration file"));
-    #endif // __WINDOWS__
-
-    // Display a preview window if so desired to the let the user review the report and 
-    // decide what to do (delete files and/or add notes). The user can also abort the 
-    // report generation by pressing the cancel button. If no preview is required, the report 
-    // will be created automatically
-    bool generateReport = true;
-    if(showPreview && !wxDebugReportPreviewStd().Show(*report))
-        generateReport = false;
-
-    // Did the user allow the report or are we to generate it automatically?
-    if(generateReport)
-    {
-        // Save all report data to disk
-        if (report->Process())
-        {
-            // Inform user that operation was successful
-            // NOTE: Some exceptions, like some access violations, prevent somehow the log
-            // message from executing correctly and thus no log is written to disk. The report
-            // is correctly generated and saved though.
-            LogDebug(wxT("Report generated in \"%s\"."), report->GetCompressedFileName().c_str());
-            report->Reset();
-        }
-        else
-            // Ops, something went wrong
-            LogError(wxT("CELayoutEditor::GenerateDebugReport - Failed to generate debug report!"));
-    }
-
-    // The report is no longer needed
-    delete report;
-}
-#endif
 
 //-----------------------------------------------------------------------
 void CELayoutEditor::HandleEvent(wxEvtHandler *handler,wxEventFunction func, wxEvent& event) const
@@ -660,7 +580,7 @@ void CELayoutEditor::HandleEvent(wxEvtHandler *handler,wxEventFunction func, wxE
     catch(std::exception& ex)\
     {
         // We found a standard exception, so deal with it
-        ProcessUnhandledException(wxT("standard"), StringHelper::ToWXString(ex.what()));
+        ProcessUnhandledException(wxT("standard"), (ex.what()));
     }
     catch ( ... )
     {
@@ -672,6 +592,7 @@ void CELayoutEditor::HandleEvent(wxEvtHandler *handler,wxEventFunction func, wxE
 //-----------------------------------------------------------------------
 void CELayoutEditor::ClearAllEvents() const
 {
+    /*
     // Clear all event tables
     wxEventHashTable::ClearAll();
 
@@ -691,6 +612,7 @@ void CELayoutEditor::ClearAllEvents() const
             (wx_static_cast(wxEvtHandler&, wx_const_cast(wxValidator&, wxDefaultValidator))).ClearEventLocker();
         #endif // wxUSE_VALIDATORS
     #endif // wxUSE_THREADS
+    */
 }
 
 //-----------------------------------------------------------------------

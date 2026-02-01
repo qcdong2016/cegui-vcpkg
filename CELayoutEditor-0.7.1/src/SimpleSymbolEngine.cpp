@@ -187,7 +187,7 @@ wxString SimpleSymbolEngine::GetExceptionCodeDescription(const DWORD exceptionCo
 wxString SimpleSymbolEngine::GetExceptionFlagsDescription(const DWORD exceptionFlags) const
 {
     wxString exceptionFlagsDesc;
-
+    const int EXCEPTION_CONTINUABLE = 0;
     // Verify which exception flags are active
     if (exceptionFlags == EXCEPTION_CONTINUABLE)  // Special case, since the flag is 0
         (void)exceptionFlagsDesc.Append(wxT("CONTINUABLE "));

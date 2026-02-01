@@ -213,6 +213,7 @@ const DWORD OUTPUT_DEBUG_STRING_EXCEPTION = 0x40010006UL;
 const DWORD ERROR_SEVERITY_MASK = ( ERROR_SEVERITY_ERROR | ERROR_SEVERITY_WARNING | ERROR_SEVERITY_INFORMATIONAL | ERROR_SEVERITY_SUCCESS );
 #endif
 
+/*
 // VEH handler flags settings
 // NOTE: Only EXCEPTION_NONCONTINUABLE in defined in WinNt.h
 #define EXCEPTION_CONTINUABLE 0x00 // Execution can proceed
@@ -233,7 +234,7 @@ const DWORD ERROR_SEVERITY_MASK = ( ERROR_SEVERITY_ERROR | ERROR_SEVERITY_WARNIN
 #define IS_UNWINDING(flag)	 (((flag) & EXCEPTION_UNWIND_CONTEXT) != 0)
 #define IS_DISPATCHING(flag)	 (((flag) & EXCEPTION_UNWIND_CONTEXT) == 0)
 #define IS_TARGET_UNWIND(flag) ((flag) & EXCEPTION_TARGET_UNWIND)
-
+*/
 
 /************************************************************************
  * MESSAGE BOXES

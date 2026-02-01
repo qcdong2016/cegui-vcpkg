@@ -84,7 +84,7 @@ void DialogResourceGroups::CreateControls()
     itemStaticBoxSizer3->Add( m_groupsGrid, 1, wxGROW | wxALL, 5 );
 
     wxStaticText* itemStaticText5 = new wxStaticText( itemDialog1, wxID_STATIC, wxT( "Default resource group:" ), wxDefaultPosition, wxDefaultSize, 0 );
-    itemStaticBoxSizer3->Add( itemStaticText5, 0, wxALIGN_LEFT | wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, 5 );
+    itemStaticBoxSizer3->Add( itemStaticText5, 0, wxALIGN_LEFT | wxLEFT | wxRIGHT | wxTOP, 5 );
 
     m_defaultGroupTextCtrl = new wxTextCtrl( itemDialog1, ID_DEFAULTGROUP_TEXTCTRL, _T( "" ), wxDefaultPosition, wxDefaultSize, wxTE_READONLY | wxSIMPLE_BORDER );
     m_defaultGroupTextCtrl->SetHelpText( wxT( "Shows the currently selected default resource group." ) );
@@ -528,7 +528,7 @@ wxString DialogResourceGroups::getUniqueGroupName()
 //-----------------------------------------------------------------------
 int DialogResourceGroups::getInternalGroupIndex( const wxString& groupName ) const
 {
-    int rowsize = m_groupsGrid->GetRows();
+    int rowsize = m_groupsGrid->GetNumberRows();
 
     for ( int i = 0; i < rowsize; i++ )
     {

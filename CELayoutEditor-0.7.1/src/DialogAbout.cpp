@@ -361,7 +361,7 @@ void DialogAbout::AddCollapsiblePane(const wxString& title, const wxArrayString&
             (void)horizontalSizer->Add(name, 0, wxSTRETCH_NOT, BORDER);
 
             // Add nick element (if it exists) - non stretching and border.
-            if(nicks[i] && nicks[i].Length() > 0)
+            if(nicks[i].Length() > 0)
             {
                 wxStaticText* const nick = new wxStaticText(pane->GetPane(), wxID_ANY, wxT(" (") + nicks[i] + wxT(")"), wxDefaultPosition, wxDefaultSize, style);
 
@@ -372,7 +372,7 @@ void DialogAbout::AddCollapsiblePane(const wxString& title, const wxArrayString&
 
             // Add email element (if it exists) - non stretching and border.
             // NOTE: The mailto: tag is automatically added
-            if(emails[i] && emails[i].Length() > 0)
+            if(emails[i].Length() > 0)
             {
                 wxStaticText* const beginTag = new wxStaticText(pane->GetPane(), wxID_ANY, wxT(" - <"), wxDefaultPosition, wxDefaultSize, style);
                 wxHyperlinkCtrl* const email = new wxHyperlinkCtrl(pane->GetPane(), wxID_ANY, emails[i], wxT("mailto:") + emails[i]);
@@ -392,7 +392,7 @@ void DialogAbout::AddCollapsiblePane(const wxString& title, const wxArrayString&
 
             // Add description element in a new line (if it exists) - No stretching but border.
             // NOTE: Text is dark grey
-            if(descs[i] && descs[i].Length() > 0)
+            if(descs[i].Length() > 0)
             {
                 wxStaticText* const desc = new wxStaticText(pane->GetPane(), wxID_ANY, wxT(" - ") + descs[i], wxDefaultPosition, wxDefaultSize, style);
                 (void)desc->SetForegroundColour(wxColour(75,75,75));

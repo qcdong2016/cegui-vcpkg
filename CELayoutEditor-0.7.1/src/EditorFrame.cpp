@@ -310,27 +310,27 @@ void EditorFrame::AttachToolbar()
     // Create toolbar with icons-only
     wxToolBar* const toolBar = CreateToolBar(wxTB_HORIZONTAL|wxNO_BORDER, wxID_ANY);
     //
-    (void)toolBar->AddTool(wxID_NEW, wxBitmap (new_xpm), wxT("New")); 
-    (void)toolBar->AddTool(ID_OPEN_CUSTOM, wxBitmap (open_xpm), wxT("Open"));
-    (void)toolBar->AddTool(wxID_SAVE, wxBitmap (save_xpm), wxT("Save"));
+    (void)toolBar->AddTool(wxID_NEW, wxT("New"), wxBitmap (new_xpm));
+    (void)toolBar->AddTool(ID_OPEN_CUSTOM, wxT("Open"), wxBitmap (open_xpm));
+    (void)toolBar->AddTool(wxID_SAVE, wxT("Save"), wxBitmap (save_xpm));
     (void)toolBar->AddSeparator();
-    (void)toolBar->AddTool(wxID_CUT, wxBitmap (cut_xpm), wxT("Cut"));
-    (void)toolBar->AddTool(wxID_COPY, wxBitmap (copy_xpm), wxT("Copy"));
-    (void)toolBar->AddTool(wxID_PASTE, wxBitmap (paste_xpm), wxT("Paste"));
-    (void)toolBar->AddTool(wxID_DELETE, wxBitmap (delete_xpm), wxT("Delete"));
-    (void)toolBar->AddSeparator();
-
-    (void)toolBar->AddTool(ID_LOCK_SELECTION, wxBitmap (lock_xpm), wxT("Lock Selection"));
+    (void)toolBar->AddTool(wxID_CUT, wxT("Cut"), wxBitmap (cut_xpm));
+    (void)toolBar->AddTool(wxID_COPY, wxT("Copy"), wxBitmap (copy_xpm));
+    (void)toolBar->AddTool(wxID_PASTE, wxT("Paste"), wxBitmap (paste_xpm));
+    (void)toolBar->AddTool(wxID_DELETE, wxT("Delete"), wxBitmap (delete_xpm));
     (void)toolBar->AddSeparator();
 
-    (void)toolBar->AddTool(wxID_ABOUT, wxBitmap (help_xpm), wxT("About"));
+    (void)toolBar->AddTool(ID_LOCK_SELECTION, wxT("Lock Selection"), wxBitmap (lock_xpm));
+    (void)toolBar->AddSeparator();
+
+    (void)toolBar->AddTool(wxID_ABOUT, wxT("About"), wxBitmap (help_xpm));
     // Don't forget this one!
     (void)toolBar->Realize();
 
     // Assign toolbar
     // NOTE: No need to free the custodial pointer toolbar since
     // it will be handled internally by wxWidgets wxFrameBase::SetToolBar()
-    wxFrameBase::SetToolBar(toolBar);    
+    wxFrameBase::SetToolBar(toolBar); 
 }
 
 //------------------------------------------------------------------------
@@ -810,7 +810,7 @@ void EditorFrame::OnSetBackground(wxCommandEvent& WXUNUSED(event))
     // will happen in this folder, including saving of layouts and such.
     const wxString currentDirectory = wxGetCwd();
     // Make sure to only include extensions, which are supported by CEGUI!
-    wxFileDialog dialog(this, wxT("Open a background image"), currentDirectory, wxT(""), wxT("Layout files (*.tga;*.jpg;*.png)|*.tga;*.jpg;*.png"), wxOPEN);
+    wxFileDialog dialog(this, wxT("Open a background image"), currentDirectory, wxT(""), wxT("Layout files (*.tga;*.jpg;*.png)|*.tga;*.jpg;*.png"));
     if (dialog.ShowModal() == wxID_OK)
     {
         wx_static_cast(EditorView*, m_document->GetFirstView())->SetBackgroundImage(dialog.GetPath());
@@ -943,10 +943,10 @@ void EditorFrame::OnLayoutSkin(wxCommandEvent& WXUNUSED(event))
 
 	// Create a dialog that lists the registered Look'N'Feels and that asks the user to choose
     // one of the options. 
-    const wxString skin = wxGetSingleChoice(StringHelper::ToWXString("Choose skin that you want to apply to entire layout:"), StringHelper::ToWXString("Skin chooser"), m_dialogMain->GetAvailableLooks());
+    const wxString skin = wxGetSingleChoice(("Choose skin that you want to apply to entire layout:"), ("Skin chooser"), m_dialogMain->GetAvailableLooks());
 
     // Apply chosen skin to ALL the widgets in the current layout
-    if(skin && skin.Length() > 0)
+    if(skin.Length() > 0)
         m_dialogMain->SetWidgetsLook(StringHelper::ToCEGUIString(skin));
 } 
 

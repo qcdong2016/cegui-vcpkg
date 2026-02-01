@@ -121,16 +121,16 @@ void EditorFrame::AttachToolbar()
     // Create toolbar with icons-only
     wxToolBar * toolBar = new wxToolBar( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_HORIZONTAL ); // |wxNO_BORDER
     //
-    toolBar->AddTool( wxID_NEW, wxBitmap ( new_xpm ) );
-    toolBar->AddTool( wxID_OPEN, wxBitmap ( open_xpm ) );
-    toolBar->AddTool( wxID_SAVE, wxBitmap ( save_xpm ) );
+    toolBar->AddTool( wxID_NEW, "", wxBitmap(new_xpm));
+    toolBar->AddTool( wxID_OPEN, "", wxBitmap ( open_xpm ) );
+    toolBar->AddTool( wxID_SAVE, "", wxBitmap ( save_xpm ) );
     toolBar->AddSeparator();
-    toolBar->AddTool( wxID_CUT, wxBitmap ( cut_xpm ) );
-    toolBar->AddTool( wxID_COPY, wxBitmap ( copy_xpm ) );
-    toolBar->AddTool( wxID_PASTE, wxBitmap ( paste_xpm ) );
-    toolBar->AddTool( wxID_CLEAR, wxBitmap ( delete_xpm ) );
+    toolBar->AddTool( wxID_CUT, "", wxBitmap ( cut_xpm ) );
+    toolBar->AddTool( wxID_COPY, "", wxBitmap ( copy_xpm ) );
+    toolBar->AddTool( wxID_PASTE, "", wxBitmap ( paste_xpm ) );
+    toolBar->AddTool( wxID_CLEAR, "", wxBitmap ( delete_xpm ) );
     toolBar->AddSeparator();
-    toolBar->AddTool( wxID_ABOUT, wxBitmap ( help_xpm ) );
+    toolBar->AddTool( wxID_ABOUT, "", wxBitmap ( help_xpm ) );
     // Don't forget this one!
     toolBar->Realize();
     SetToolBar( toolBar );

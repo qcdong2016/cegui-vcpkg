@@ -162,8 +162,8 @@ void PropertiesPanel::createContent()
     // Create toolbar with icons-only
     wxToolBar* toolBar = new wxToolBar( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_HORIZONTAL ); // |wxNO_BORDER
     //
-    toolBar->AddTool( ID_GRID_ADD_ROW, wxBitmap ( new_xpm ) );
-    toolBar->AddTool( ID_GRID_DEL_ROW, wxBitmap ( cut_xpm ) );
+    toolBar->AddTool( ID_GRID_ADD_ROW, "", wxBitmap(new_xpm));
+    toolBar->AddTool( ID_GRID_DEL_ROW, "", wxBitmap ( cut_xpm ) );
     sizerProps->Add( toolBar, 0, wxGROW | wxALIGN_CENTER_VERTICAL | wxLEFT | wxRIGHT | wxTOP, 5 );
     // Don't forget this one!
     toolBar->Realize();
@@ -483,7 +483,7 @@ void PropertiesPanel::createPropertiesGrid( wxWindow* parent )
 //-----------------------------------------------------------------------
 int PropertiesPanel::getInternalRegionIndex( const wxString& name ) const
 {
-    int rowsize = m_propertiesGrid->GetRows();
+    int rowsize = m_propertiesGrid->GetNumberRows();
 
     for ( int i = 0; i < rowsize; i++ )
     {
